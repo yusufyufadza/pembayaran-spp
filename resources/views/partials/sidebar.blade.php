@@ -19,17 +19,10 @@
 
             <li><a class="nav-link" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a></li>
 
-            <li><a class="nav-link" href="javascript:void(0)"><i data-feather="users"></i><span>Daftar Siswa</span></a>
-              <ul class="nav-submenu menu-content">
-              </ul>
-            </li>
-            <li><a class="nav-link" href="javascript:void(0)"><i data-feather="user"></i><span>Daftar Petugas</span></a>
-              <ul class="nav-submenu menu-content">
-              </ul>
-            </li>
-            <li><a class="nav-link" href="javascript:void(0)"><i class="fa fa-table" style="margin-right: 20px;"></i><span>Daftar Kelas</span></a></li>
-
-            <li><a class="nav-link" href="javascript:void(0)"><i data-feather="server"></i><span>Daftar Pembayaran</span></a>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-group-students" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Siswa</span></a></li></li>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-teacher" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Petugas</span></a></li>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-group-students" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Kelas</span></a></li>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-bank" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Pembayaran</span></a></li>
 
           </ul>
         </div>
