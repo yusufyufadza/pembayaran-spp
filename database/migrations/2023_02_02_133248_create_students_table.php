@@ -14,14 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('nisn');
-            $table->char('nis');
+            $table->char('nisn',10)->primary();
+            $table->char('nis',8);
             $table->string('name');
-            $table->foreignId('id_class');
+            $table->foreignId('id_class')->nullable();
             $table->text('address');
             $table->string('phone_number');
-            $table->foreignId('id_transaction');
+            $table->foreignId('id_transaction')->nullable();
             $table->timestamps();
         });
     }
