@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
-            $table->string('nama_officer');
+            $table->string('name_officer');
             $table->enum('level', ["admin","officer"]);
             $table->timestamps();
         });

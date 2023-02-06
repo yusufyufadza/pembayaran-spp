@@ -26,7 +26,7 @@ class studentController extends Controller
     public function create()
     {
         return view('contents.student.createStudent');
-        
+
     }
 
     /**
@@ -48,7 +48,7 @@ class studentController extends Controller
        student::create($validatedData);
 
        return redirect('/student')->with('success','Siswa ' .$request->name. ' berhasil ditambahkan');
-       
+
     }
 
     /**
