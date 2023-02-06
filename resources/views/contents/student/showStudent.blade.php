@@ -24,6 +24,7 @@
                     <th>NISN</th>
                     <th>NIS</th>
                     <th>Nama</th>
+                   
                     <th>Alamat</th>
                     <th>No telp</th>
                     <th>Opsi</th>
@@ -36,6 +37,7 @@
                     <td>{{ $s->nisn }}</td>
                     <td>{{ $s->nis }}</td>
                     <td>{{ $s->name }}</td>
+                    
                     <td>{{ $s->address }}</td>
                     <td>{{ $s->phone_number }}</td>
                     <td class="mx-auto">

@@ -18,7 +18,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label" for="exampleFormControlInput1">NISN</label>
-                    <input class="form-control" name="nisn" id="exampleFormControlInput1" type="number" placeholder="name@example.com">
+                    <input class="form-control" name="nisn" id="exampleFormControlInput1" type="number" >
                   </div>
                 </div>
               </div>
@@ -26,7 +26,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label" for="exampleInputPassword2">NIS</label>
-                    <input class="form-control" name="nis" id="exampleInputPassword2" type="number" placeholder="Password">
+                    <input class="form-control" name="nis" id="exampleInputPassword2" type="number" >
                   </div>
                 </div>
               </div>
@@ -34,7 +34,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label" for="exampleInputPassword2">Nama</label>
-                    <input class="form-control" name="name" id="exampleInputPassword2" type="text" placeholder="Password">
+                    <input class="form-control" name="name" id="exampleInputPassword2" type="text" >
                   </div>
                 </div>
               </div>
@@ -50,7 +50,7 @@
                 <div class="col">
                   <div class="mb-3">
                     <label class="form-label" for="exampleInputPassword2">Telp</label>
-                    <input class="form-control" name="phone_number" id="exampleInputPassword2" type="number" placeholder="Password">
+                    <input class="form-control" name="phone_number" id="exampleInputPassword2" type="number" >
                   </div>
                 </div>
               </div>

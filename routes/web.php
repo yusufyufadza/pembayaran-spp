@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\studentController;
-use App\Http\Controllers\authController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\authController;
+use App\Http\Controllers\officerController;
+use App\Http\Controllers\studentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/login', function () {
 
 Route::post('/loginPost',[authController::class,'login']);
 
+//Students
 Route::get('/student',[studentController::class,'index']);
 Route::get('/student/create',[studentController::class,'create']);
 Route::post('/student/store',[studentController::class,'store']);
@@ -33,6 +35,8 @@ Route::put('/student/update/{nisn}',[studentController::class,'update']);
 Route::delete('/student/delete/{nisn}',[studentController::class,'destroy']);
 Route::get('/student/detail/{nisn}',[studentController::class,'detail']);
 
+//officer
+Route::get('/officer', [officerController::class,'show']);
 
 
 

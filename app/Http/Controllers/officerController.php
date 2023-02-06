@@ -13,7 +13,7 @@ class officerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show()
     {
         $officer = officer::all();
         return view('contents.officer.showOfficer',compact('officer'));
@@ -125,5 +125,12 @@ class officerController extends Controller
         $petugas->delete();
 
         return redirect('/officer/showOfficer')->with('success','Petugas berhasil dihapus');
+    }
+
+    public function detail($id_officer)
+    {
+        $officer = officer::where('id_officer',$id_officer)->first();
+
+        return view('contents.officer.detailOfficer',compact('officer'));
     }
 }
