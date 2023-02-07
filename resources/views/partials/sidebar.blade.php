@@ -17,7 +17,7 @@
 
             </li>
 
-            <li><a class="nav-link" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a></li>
+            <li><a class="nav-link" href="/dashboard"><i data-feather="home"></i><span>Dashboard</span></a></li>
 
             <li><a class="nav-link" href="/student"><i class="icofont icofont-group-students" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Siswa</span></a></li></li>
             <li><a class="nav-link" href="/officer"><i class="icofont icofont-teacher" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Petugas</span></a></li>

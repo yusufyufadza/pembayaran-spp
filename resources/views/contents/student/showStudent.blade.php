@@ -12,10 +12,9 @@
         <div class="card">
           <div class="card-header">
             <h5 class="mb-4">Data Siswa</h5>
-            <a class="btn btn-primary mb-0" href="/student/create">Tambah</a>
           </div>
-        
           <div class="card-body">
+            <a class="btn btn-success mb-2" href="/admin/tambahpetugas">Tambah Data</a>
             <div class="dt-ext table-responsive">
               <table class="display" id="responsive">
                 <thead>
@@ -24,7 +23,7 @@
                     <th>NISN</th>
                     <th>NIS</th>
                     <th>Nama</th>
-                   
+                   <th>Kelas</th>
                     <th>Alamat</th>
                     <th>No telp</th>
                     <th>Opsi</th>
@@ -37,7 +36,7 @@
                     <td>{{ $s->nisn }}</td>
                     <td>{{ $s->nis }}</td>
                     <td>{{ $s->name }}</td>
-                    
+                    <td>{{ $s->classModel->name_class ?? ''}} {{ $s->classModel->student_class ?? ''}}</td>
                     <td>{{ $s->address }}</td>
                     <td>{{ $s->phone_number }}</td>
                     <td class="mx-auto">
@@ -48,16 +47,18 @@
                           @csrf
                         <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                       </form>
+
+
                     </td>
-                    @endforeach
-                  </tr>
+                </tr>
+                 @endforeach
                 </tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
-  </div>  
+  </div>
 @endsection

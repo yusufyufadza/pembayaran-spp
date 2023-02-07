@@ -71,7 +71,7 @@ return [
 
         'officers' => [
             'driver' => 'eloquent',
-            'table' => App\Model\officer::class,
+            'model' => App\Models\officer::class,
         ],
     ],
 

@@ -13,10 +13,10 @@
               </div>
               @endif
             <div class="col-sm-6">
-              
+
                 <h3>Petugas</h3>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                 </ol>
             </div>
         </div>
@@ -31,15 +31,13 @@
                     <h5>Data Petugas</h5><span>Dibawah Ini adalah table semua data user aktif dan user nonaktif kamu bisa mengelolanya. Terdapat Beberapa Button Untuk Mengelola</span>
                 </div>
                 <div class="card-body">
-                  <a class="btn btn-success mb-2" href="/admin/tambahpetugas">Tambah Data</a>
+                  <a class="btn btn-success mb-2" href="/officer/createOfficer">Tambah Data</a>
                     <div class="dt-ext table-responsive">
                       <table class="table table-bordered" id="basic-row-reorder">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Nama</th>
                                 <th scope="col">Username</th>
-                                <th scope="col">No telp</th>
                                 <th scope="col">level</th>
                                 <th scope="col">Opsi</th>
                             </tr>
@@ -48,14 +46,12 @@
                             @foreach ($officer as $o)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $o->nama_petugas }}</td>
                                     <td>{{ $o->username }}</td>
-                                    <td>{{ $o->telp }}</td>
                                     <td>{{ $o->level }}</td>
                                     <td>
-                                        <a class="btn btn-primary mb-3" href="/admin/detailpetugas/{{ $o->id_petugas }}">Detail</a>
-                                        <a class="btn btn-warning mb-3" href="/admin/editpetugas/{{ $o->id_petugas }}">Edit</a>
-                                        <a class="btn btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $o->id_petugas }}" href="/admin/deletepetugas/{{ $o->id_petugas }}">Hapus</a>
+                                        <a class="btn btn-primary mb-3" href="/officer/detailOfficer/{{ $o->id_officer }}">Detail</a>
+                                        <a class="btn btn-warning mb-3" href="/officer/editOfficer{{  $o->id_officer  }}">Edit</a>
+                                        <a class="btn btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $o->id_officer }}" href="/officer/delete/{{ $o->id_officer }}">Hapus</a>
 
                                          {{-- modal delete --}}
                                    <div class="modal fade" id="modalDelete{{ $o->id_petugas }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

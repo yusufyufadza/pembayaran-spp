@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\classModel;
 use App\Models\student;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,9 @@ class studentController extends Controller
     public function index()
     {
         $students = student::all();
+        // dd(
+        //     $students
+        // );
         return view('contents.student.showStudent',compact('students'));
     }
 
@@ -25,7 +29,8 @@ class studentController extends Controller
      */
     public function create()
     {
-        return view('contents.student.createStudent');
+        $class= classModel::all();
+        return view('contents.student.createStudent',compact('class'));
 
     }
 
@@ -37,15 +42,25 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
+
        $validatedData = $request->validate([
         'nisn' => 'required|unique:students',
         'nis' => 'required',
         'name' => 'required',
+        'id_class' => 'required',
         'address' => 'required',
         'phone_number' => 'required',
        ]);
 
-       student::create($validatedData);
+       student::create([
+        "nisn" => $request->nisn,
+        "nis" => $request->nis,
+        "name" => $request->name,
+        "id_class" => $request->id_class,
+        "address" => $request->address,
+        "phone_number" => $request->phone_number
+
+       ]);
 
        return redirect('/student')->with('success','Siswa ' .$request->name. ' berhasil ditambahkan');
 
@@ -71,8 +86,9 @@ class studentController extends Controller
     public function edit($nisn)
     {
         $student = student::where('nisn',$nisn)->first();
+        $class = classModel::all();
 
-        return view('contents.student.editStudent',compact('student'));
+        return view('contents.student.editStudent',compact('student','class'));
     }
 
     /**
@@ -90,9 +106,17 @@ class studentController extends Controller
             'name' => 'required',
             'address' => 'required',
             'phone_number' => 'required',
+            'id_class' => 'required',
            ]);
 
-        student::where('nisn',$nisn)->update($validatedData);
+        student::where('nisn',$nisn)->update([
+            "nisn" => $request->nisn,
+            "nis" => $request->nis,
+            "name" => $request->name,
+            "id_class" => $request->id_class,
+            "address" => $request->address,
+            "phone_number" => $request->phone_number
+        ]);
 
         return redirect('/student')->with('success','Siswa berhasil di update');
     }

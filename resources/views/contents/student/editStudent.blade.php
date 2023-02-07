@@ -7,7 +7,7 @@
           <div class="card-header pb-0">
             <h5>Basic form control</h5>
           </div>
-         
+
           <form class="form theme-form" action="/student/update/{{ $student->nisn }}" method="POST">
             @method('PUT')
             @csrf
@@ -38,6 +38,18 @@
               </div>
               <div class="row">
                 <div class="col">
+                  <div class="mb-3">
+                    {{-- <input type="radio"> --}}
+                            <label for="formcontrol-select1">Kelas</label>
+                            <select class="form-control btn-square" name="id_class" id="formcontrol-select1">
+                                @foreach ($class as $cl)
+                                    <option value="{{ $cl->id }}">{{ $cl->name_class }} {{ $cl->student_class }}</option>
+                                @endforeach
+                            </select>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col">
                   <div>
                     <label class="form-label" for="exampleFormControlTextarea4">Alamat</label>
                     <textarea class="form-control" name="address" id="exampleFormControlTextarea4" rows="3" value="{{ $student->address }}">{{ $student->address }}</textarea>
@@ -59,8 +71,8 @@
             </div>
           </form>
         </div>
-        
-        
+
+
       </div>
     </div>
   </div>

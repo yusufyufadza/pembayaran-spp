@@ -24,10 +24,10 @@
             <div class="bookmark-dropdown onhover-show-div">
               <div class="form-group mb-0">
                 <div class="input-group">
-                 
+
             </div>
           </li>
-         
+
           <li>
             <div class="mode"><i class="fa fa-moon-o"></i></div>
           </li>
@@ -61,7 +61,7 @@
             </ul>
           </li>
           <li class="onhover-dropdown p-0">
-            <button class="btn btn-primary-light" type="button"><a href="login_two.html"><i data-feather="log-out"></i>Log out</a></button>
+            <button class="btn btn-primary-light" type="button"><a href="/login"><i data-feather="log-out"></i>Log out</a></button>
           </li>
         </ul>
       </div>

@@ -14,10 +14,15 @@ class student extends Model
     protected $table = 'students';
 
     protected $fillable = [
-    'nisn',
-    'nis',
-    'name',
-    'address',
-    'phone_number',
-];
+        'nisn',
+        'nis',
+        'name',
+        'address',
+        'phone_number',
+        'id_class',
+    ];
+
+    public function classModel(){
+        return $this->belongsTo(classModel::class, 'id_class');
+    }
 }

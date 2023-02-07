@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\officer::create([
-            'nama_officer' => 'admin',
+            'name_officer' => 'admin',
             'username' => 'admin',
             'password' => Hash::make('admin'),
         ]);

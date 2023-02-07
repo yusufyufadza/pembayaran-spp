@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\officer;
+use Illuminate\Support\Facades\Hash;
 
 class authController extends Controller
 {
@@ -57,10 +59,10 @@ class authController extends Controller
            'name' => $validatedData['name'],
            'email' => $validatedData['email'],
            'address' => $validatedData['address'],
-           'password' => $validatedData['password'], 
+           'password' => $validatedData['password'],
        ]);
        return redirect('/login')->with('success', 'Registration Succesfully, Pls Login!');
-       
+
     }
 
     //Logout
