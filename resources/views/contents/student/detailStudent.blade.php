@@ -1,19 +1,14 @@
 @extends('layout.main')
 @section('content')
-<div class="container-fluid user-card">
-    <div class="row">
-      <div class="col-12">
-        <div class="card custom-card">
-          <div class="card-header"><img class="img-fluid" src="../assets/images/user-card/1.jpg" alt=""></div>
-         <div class="card-body">
-            <div class="row">
-                <div class="col">
-            <p class="h5">Nama</p><span class="h5 text-end">{{ $student->name }}</span>
-        </div>
-        </div>
-         </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      <div class="page-header">
+        <div class="row">
+          <div class="col-sm-6">
+            <h3>User Profile</h3>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+              <li class="breadcrumb-item"></li>
+              <li class="breadcrumb-item active">User Profile</li>
+            </ol>
+          </div>
+
 @endsection

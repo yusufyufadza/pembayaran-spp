@@ -22,7 +22,8 @@
             <li><a class="nav-link" href="/student"><i class="icofont icofont-group-students" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Siswa</span></a></li></li>
             <li><a class="nav-link" href="/officer"><i class="icofont icofont-teacher" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Petugas</span></a></li>
             <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-group-students" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Kelas</span></a></li>
-            <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-bank" style="margin-right: 20px; font-size: 0,73px;"></i><span>Daftar Pembayaran</span></a></li>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-bank" style="margin-right: 20px; font-size: 0,73px;"></i><span>Transaksi</span></a></li>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="icofont icofont-bank" style="margin-right: 20px; font-size: 0,73px;"></i><span>Laporan</span></a></li>
 
           </ul>
         </div>

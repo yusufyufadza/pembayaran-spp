@@ -15,7 +15,7 @@
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label class="form-label" for="exampleFormControlInput1">NISN</label>
+                    <label for="formcontrol-select1">NISN :</label>
                     <input class="form-control" name="nisn" id="exampleFormControlInput1" type="number" placeholder="" value="{{ $student->nisn }}">
                   </div>
                 </div>
@@ -23,7 +23,7 @@
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label class="form-label" for="exampleInputPassword2">NIS</label>
+                    <label for="formcontrol-select1">NIS :</label>
                     <input class="form-control" name="nis" id="exampleInputPassword2" type="number" placeholder="Password" value="{{ $student->nis }}">
                   </div>
                 </div>
@@ -31,8 +31,16 @@
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label class="form-label" for="exampleInputPassword2">Nama</label>
+                    <label for="formcontrol-select1">Nama :</label>
                     <input class="form-control" name="name" id="exampleInputPassword2" type="text" placeholder="Password" value="{{ $student->name }}">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="formcontrol-select1">Email :</label>
+                    <input class="form-control" name="email" id="exampleInputPassword2" type="text" placeholder="Password" value="{{ $student->name }}">
                   </div>
                 </div>
               </div>
@@ -51,7 +59,7 @@
               <div class="row">
                 <div class="col">
                   <div>
-                    <label class="form-label" for="exampleFormControlTextarea4">Alamat</label>
+                    <label for="formcontrol-select1">Alamat :</label>
                     <textarea class="form-control" name="address" id="exampleFormControlTextarea4" rows="3" value="{{ $student->address }}">{{ $student->address }}</textarea>
                   </div>
                 </div>
@@ -59,7 +67,7 @@
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label class="form-label" for="exampleInputPassword2">Telp</label>
+                    <label for="formcontrol-select1">No Telepon :</label>
                     <input class="form-control" value="{{ $student->phone_number }}" name="phone_number" id="exampleInputPassword2" type="number" placeholder="Password">
                   </div>
                 </div>

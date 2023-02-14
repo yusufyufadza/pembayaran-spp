@@ -10,6 +10,11 @@
           <div class="card-header pb-0">
             <h5>Basic form control</h5>
           </div>
+          @if (isset($errors))
+              @foreach ($errors->all() as $error)
+                  <small class="text-danger">{{ $error }}</small>
+              @endforeach
+          @endif
           <form class="form theme-form" action="/student/store" method="POST">
             @csrf
             <div class="card-body">
@@ -34,6 +39,14 @@
                   <div class="mb-3">
                     <label for="formcontrol-select1">Nama</label>
                     <input class="form-control" name="name" id="exampleInputPassword2" type="text" >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="formcontrol-select1">Email</label>
+                    <input class="form-control" name="email" id="exampleInputPassword2" type="text" >
                   </div>
                 </div>
               </div>

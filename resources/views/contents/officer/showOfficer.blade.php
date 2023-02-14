@@ -4,89 +4,64 @@
 @section('content')
 
 <div class="container-fluid">
-    <div class="page-header">
-        <div class="row">
-            @if (session('success'))
-            <div class="alert alert-primary alert-dismissible fade show" role="alert"><strong>Selamat ! </strong>
-                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" data-bs-original-title="" title=""></button>
-                {{ session('success') }}
-              </div>
-              @endif
-            <div class="col-sm-6">
-
-                <h3>Petugas</h3>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
+    @if (session('success'))
+    <div class="alert alert-primary alert-dismissible fade show" role="alert"><strong>Selamat ! </strong>
+        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" data-bs-original-title="" title=""></button>
+        {{ session('success') }}
+      </div>
+      @endif
+      <div class="row">
         <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Data Petugas</h5><span>Dibawah Ini adalah table semua data user aktif dan user nonaktif kamu bisa mengelolanya. Terdapat Beberapa Button Untuk Mengelola</span>
-                </div>
-                <div class="card-body">
-                  <a class="btn btn-success mb-2" href="/officer/createOfficer">Tambah Data</a>
-                    <div class="dt-ext table-responsive">
-                      <table class="table table-bordered" id="basic-row-reorder">
-                        <thead>
-                            <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">level</th>
-                                <th scope="col">Opsi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($officer as $o)
-                            <tr>
-                                <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $o->username }}</td>
-                                    <td>{{ $o->level }}</td>
-                                    <td>
-                                        <a class="btn btn-primary mb-3" href="/officer/detailOfficer/{{ $o->id_officer }}">Detail</a>
-                                        <a class="btn btn-warning mb-3" href="/officer/editOfficer{{  $o->id_officer  }}">Edit</a>
-                                        <a class="btn btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $o->id_officer }}" href="/officer/delete/{{ $o->id_officer }}">Hapus</a>
-
-                                         {{-- modal delete --}}
-                                   <div class="modal fade" id="modalDelete{{ $o->id_petugas }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">Hapus Petugas</h5>
-                                          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close">
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Apakah anda yakin menghapus {{ $o->nama_petugas }} ?</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Batal</button>
-                                          <form action="/admin/deletepetugas/{{ $o->id_petugas }}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                          <button class="btn btn-primary" type="submit">Yakin</button>
-                                        </form>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                    </td>
-                              </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+          <div class="card">
+            <div class="card-header">
+              <div class="page-header">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <h3>PETUGAS</h3>
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Petugas</li>
+                      </ol>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+            <div class="card-body">
+              <a class="btn btn-success mb-2" href="/officer/create">Tambah Data</a>
+              <div class="dt-ext table-responsive">
+                <table class="display" id="responsive">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama</th>
+                      <th>Level</th>
+                      <th>Opsi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      @foreach ($officer as $o)
+                    <tr>
+                      <td>{{ $loop->iteration }}</td>
+                      <td>{{ $o->name_officer }}</td>
+                      <td>{{ $o->level }}</td>
+                      <td class="mx-auto">
+                          <a class="btn mb-2" href="/officer/detail/{{ $o->id }}" style="background-color: rgb(0, 162, 255); color:white;"><i class="fas fa-eye"></i></a>
+                          <a class="btn btn-warning mb-2" href="/officer/edit/{{ $o->id }}"><i class="fas fa-pen"></i></a>
+                          <form action="/student/delete/{{ $o->id }}" method="POST">
+                            @method('delete')
+                            @csrf
+                          <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                        </form>
+
+
+                      </td>
+                  </tr>
+                   @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 @endsection

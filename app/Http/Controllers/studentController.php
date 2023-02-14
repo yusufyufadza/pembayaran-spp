@@ -17,7 +17,7 @@ class studentController extends Controller
     {
         $students = student::all();
         // dd(
-        //     $students
+         //    $students
         // );
         return view('contents.student.showStudent',compact('students'));
     }
@@ -42,11 +42,12 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd($request->all());
        $validatedData = $request->validate([
         'nisn' => 'required|unique:students',
         'nis' => 'required',
         'name' => 'required',
+        'email' => 'required',
         'id_class' => 'required',
         'address' => 'required',
         'phone_number' => 'required',
@@ -56,6 +57,7 @@ class studentController extends Controller
         "nisn" => $request->nisn,
         "nis" => $request->nis,
         "name" => $request->name,
+        "email" => $request->email,
         "id_class" => $request->id_class,
         "address" => $request->address,
         "phone_number" => $request->phone_number
@@ -104,6 +106,7 @@ class studentController extends Controller
             'nisn' => 'required|unique:students',
             'nis' => 'required',
             'name' => 'required',
+            'email' =>'required',
             'address' => 'required',
             'phone_number' => 'required',
             'id_class' => 'required',
@@ -113,6 +116,7 @@ class studentController extends Controller
             "nisn" => $request->nisn,
             "nis" => $request->nis,
             "name" => $request->name,
+            "email" =>$request->email,
             "id_class" => $request->id_class,
             "address" => $request->address,
             "phone_number" => $request->phone_number

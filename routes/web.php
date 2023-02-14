@@ -37,6 +37,15 @@ Route::get('/student/detail/{nisn}',[studentController::class,'detail']);
 
 //officer
 Route::get('/officer', [officerController::class,'show']);
+Route::get('/officer/create',[officerController::class,'create']);
+Route::post('/officer/store',[officerController::class,'store']);
+Route::get('/officer/edit/{id}',[officerController::class,'edit']);
+Route::put('/officer/update/{id}',[officerController::class,'update']);
+Route::delete('/officer/delete/{id}',[officerController::class,'destroy']);
+Route::get('/officer/detail/{id}',[officerController::class,'detail']);
+
+//class
+
 
 
 

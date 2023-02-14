@@ -17,6 +17,7 @@ return new class extends Migration
             $table->char('nisn',10)->primary();
             $table->char('nis',8);
             $table->string('name');
+            $table->string('email');
             $table->foreignId('id_class')->nullable();
             $table->text('address');
             $table->string('phone_number');

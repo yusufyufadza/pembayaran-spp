@@ -17,6 +17,7 @@ class student extends Model
         'nisn',
         'nis',
         'name',
+        'email',
         'address',
         'phone_number',
         'id_class',

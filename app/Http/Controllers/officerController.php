@@ -40,7 +40,7 @@ class officerController extends Controller
         $data = $request->all();
 
         $validate = Validator::make($data, [
-            'username' => 'required|string|unique:petugas',
+            'username' => 'required|string|unique:off$officer',
             'password' => 'required|string|min:6',
             'name_officer' => 'required|string|max:255',
             'level' => 'required|in:admin,officer'
@@ -64,7 +64,7 @@ class officerController extends Controller
 
         ]);
 
-        return redirect('/admin/petugas')->with('success', 'Data berhasil ditambahkan');
+        return redirect('/content/officer')->with('success', 'Data berhasil ditambahkan');
 
     }
 
@@ -84,7 +84,7 @@ class officerController extends Controller
      */
     public function edit($id_officer)
     {
-        $petugas = officer::where('id_officer', $id_officer)->first();
+        $officer = officer::where('id_officer', $id_officer)->first();
 
         return view ('contents.officer.editOfficer',compact('Officer'));
     }
@@ -100,9 +100,9 @@ class officerController extends Controller
     {
         $data = $request->all();
 
-        $petugas = officer::find($id_officer);
+        $officer = officer::find($id_officer);
 
-        $petugas->update([
+        $officer->update([
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
             'nama_officer' => $data['nama_officer'],
@@ -120,9 +120,9 @@ class officerController extends Controller
      */
     public function destroy($id_officer)
     {
-        $petugas = officer::findOrFail($id_officer);
+        $officer = officer::findOrFail($id_officer);
 
-        $petugas->delete();
+        $officer->delete();
 
         return redirect('/officer/showOfficer')->with('success','Petugas berhasil dihapus');
     }
