@@ -11,7 +11,7 @@ class officer extends Authenticatable
 
      protected $table = 'officers';
     protected $fillable = [
-        'nama_officer',
+        'name_officer',
         'username',
         'password',
     ];
