@@ -42,15 +42,13 @@
                     <td>{{ $s->name }}</td>
                     <td>{{ $s->classModel->name_class ?? ''}} {{ $s->classModel->student_class ?? ''}}</td>
                     <td class="mx-auto">
-                        <a class="btn btn-sm mb-2" href="/student/detail/{{ $s->nisn }}" style="background-color: rgb(0, 162, 255); color:white;"><i class="fas fa-eye"></i></a>
-                        <a class="btn btn-warning mb-2" href="/student/edit/{{ $s->nisn }}"><i class="fas fa-pen"></i></a>
+                        <a class="btn btn-sm mb-2" href="/student/detail/{{ $s->nisn }}" style="background-color: rgb(0, 162, 255); color:white;">Detail</a>
+                        <a class="btn btn-warning mb-2" href="/student/edit/{{ $s->nisn }}">Edit</a>
                         <form action="/student/delete/{{ $s->nisn }}" method="POST">
                           @method('delete')
                           @csrf
-                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                        <button class="btn btn-danger mb-2" type="submit">Hapus</i></button>
                       </form>
-
-
                     </td>
                 </tr>
                  @endforeach

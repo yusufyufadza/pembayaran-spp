@@ -43,14 +43,16 @@
                       <td>{{ $o->name_officer }}</td>
                       <td>{{ $o->level }}</td>
                       <td class="mx-auto">
-                          <a class="btn mb-2" href="/officer/detail/{{ $o->id }}" style="background-color: rgb(0, 162, 255); color:white;"><i class="fas fa-eye"></i></a>
-                          <a class="btn btn-warning mb-2" href="/officer/edit/{{ $o->id }}"><i class="fas fa-pen"></i></a>
-                          <form action="/student/delete/{{ $o->id }}" method="POST">
+
+                        <div class="mx-auto">
+                          <a class="btn btn-sm mb-2" href="/officer/detail/{{ $o->id }}" style="background-color: rgb(0, 162, 255); color:white;">Detail</a>
+                          <a class="btn btn-warning mb-2" href="/officer/edit/{{ $o->id }}">Edit</a>
+                          <form action="/officer/delete/{{ $o->id }}" method="POST">
                             @method('delete')
                             @csrf
-                          <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                          <button class="btn btn-danger mb-2" type="submit">Hapus</i></button>
                         </form>
-
+                    </div>
 
                       </td>
                   </tr>

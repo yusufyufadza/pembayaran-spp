@@ -8,11 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class officer extends Authenticatable
 {
     use HasFactory;
-
-     protected $table = 'officers';
+    protected $table = 'officers';
     protected $fillable = [
-        'name_officer',
         'username',
         'password',
+        'name_officer',
+        'level',
     ];
 }

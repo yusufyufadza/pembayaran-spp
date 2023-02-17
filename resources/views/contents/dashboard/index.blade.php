@@ -57,6 +57,6 @@
               <div class="col-xl-6 col-xs-12 col-md-6 col-sm-6">
                 <div class="cal-info text-center">
                   <div>
-                   
-               
+
+
 @endsection

@@ -15,8 +15,9 @@ class officerController extends Controller
      */
     public function show()
     {
-        $officer = officer::all();
-        return view('contents.officer.showOfficer',compact('officer'));
+        $title = "Daftar petugas";
+        $officer = officer::get();
+        return view('contents.officer.showOfficer', compact('title', 'officer'));
     }
 
     /**
@@ -26,7 +27,10 @@ class officerController extends Controller
      */
     public function create()
     {
-        return view('contents.officer.createOfficer');
+        $title = "Tambah Petugas";
+        $classes = officer::get();
+        // dd($classes);
+        return view('contents.officer.createOfficer', compact('title', 'classes'));
     }
 
     /**
@@ -37,35 +41,19 @@ class officerController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        {
+            // dd($request->all());
+            $validatedData = $request->validate([
+             'username' => 'required',
+             'password' => 'required',
+             'name_officer' => 'required',
+             'level' => 'required',
+            ]);
 
-        $validate = Validator::make($data, [
-            'username' => 'required|string|unique:off$officer',
-            'password' => 'required|string|min:6',
-            'name_officer' => 'required|string|max:255',
-            'level' => 'required|in:admin,officer'
-        ]);
+            officer::create($validatedData);
 
-        if ($validate->fails()) {
-            return back()->withErrors($validate);
+            return redirect('/officer')->with('success','Petugas ' .$request->name. ' berhasil ditambahkan');
         }
-
-        $username = officer::where('username', $data['username'])->first();
-
-        if ($username) {
-            return back()->with(['username' => 'Username sudah digunakan !']);
-        }
-
-        officer::create([
-            'username' => $data['username'],
-            'password' => Hash::make($data['password']),
-            'name_officer' => $data['name_officer'],
-            'level' => $data['level'],
-
-        ]);
-
-        return redirect('/content/officer')->with('success', 'Data berhasil ditambahkan');
-
     }
 
 
@@ -84,9 +72,9 @@ class officerController extends Controller
      */
     public function edit($id_officer)
     {
-        $officer = officer::where('id_officer', $id_officer)->first();
-
-        return view ('contents.officer.editOfficer',compact('Officer'));
+        $title = "Edit Petugas";
+        $officer = officer::where('id', $id_officer)->first();
+        return view('contents.officer.editOfficer', compact('title', 'officer'));
     }
 
     /**
@@ -98,19 +86,17 @@ class officerController extends Controller
      */
     public function update(Request $request, $id_officer)
     {
-        $data = $request->all();
+        $validatedData = $request->validate([
+            'username'                   => 'required',
+            'name_officer'               => 'required',
+            'level'                      => 'required',
+            ]);
 
-        $officer = officer::find($id_officer);
+            officer::where('id', $id_officer)->update($validatedData);
 
-        $officer->update([
-            'username' => $data['username'],
-            'password' => Hash::make($data['password']),
-            'nama_officer' => $data['nama_officer'],
-            'level' => $data['level'],
-        ]);
-
-        return redirect('/officer/showOfficer')->with('success','Data Petugas Berhasil Diubah');
+            return redirect('/officer')->with('pesan', 'berhasil di upadate :)');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -118,19 +104,19 @@ class officerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_officer)
-    {
-        $officer = officer::findOrFail($id_officer);
-
-        $officer->delete();
-
-        return redirect('/officer/showOfficer')->with('success','Petugas berhasil dihapus');
-    }
 
     public function detail($id_officer)
     {
-        $officer = officer::where('id_officer',$id_officer)->first();
+        $title = "Detail Siswa";
+        $officer = officer::where('id', $id_officer)->first();
 
-        return view('contents.officer.detailOfficer',compact('officer'));
+        return view ('contents.officer.detailOfficer',compact('title', 'officer'));
+    }
+
+    public function destroy($id_officer)
+    {
+        officer::where('id',$id_officer)->delete();
+
+        return redirect('/officer')->with('success','Petugas berhasil dihapus');
     }
 }
