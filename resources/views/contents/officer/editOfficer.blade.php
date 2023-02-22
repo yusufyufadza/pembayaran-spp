@@ -36,7 +36,7 @@
                         <label for="password">Level :</label>
                         <select class="form-control" name="level" id="">
                           <option value="admin" {{ $officer->level == "admin" ? "selected" : '' }}>Admin</option>
-                          <option value="officers" {{ $officer->level == "petugas" ? "selected" : '' }}>Petugas</option>
+                          <option value="petugas" {{ $officer->level == "petugas" ? "selected" : '' }}>Petugas</option>
                         </select>
                     </div>
                     <div class="mb-3">

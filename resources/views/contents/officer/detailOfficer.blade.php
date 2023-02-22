@@ -1,77 +1,76 @@
 @extends('layout.main')
 @section('content')
-<section style="background-color: #eee;">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card mb-4">
-            <div class="card-body text-center">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                class="rounded-circle img-fluid" style="width: 150px;">
-              <h5 class="my-3">John Smith</h5>
-              <p class="text-muted mb-1">Full Stack Developer</p>
-              <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
-              <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-primary">Follow</button>
-                <button type="button" class="btn btn-outline-primary ms-1">Message</button>
-              </div>
+<div class="container-fluid">
+    <p class="mb-4">Berikut adalah data petugas dengan nama <span class="text-success">{{ $officer->name_officer }}</span></p>
+    {{-- Card Information --}}
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div class="card shadow mb-4">
+                <img class="m-2 mx-auto img-fluid rounded-circle border border-1 border-danger"
+                    src="https://static.vecteezy.com/system/resources/thumbnails/004/607/791/small/man-face-emotive-icon-smiling-male-character-in-blue-shirt-flat-illustration-isolated-on-white-happy-human-psychological-portrait-positive-emotions-user-avatar-for-app-web-design-vector.jpg"
+                    height="200" width="200" alt="">
+                <h3 class="font-weight-bold text-success text-center">{{ $officer->name_officer }}</h3>
+                <h5 class="small text-center mb-4">{{ $officer->username }}</h5>
             </div>
-          </div>
         </div>
-        <div class="col-lg-8">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Full Name</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">Johnatan Smith</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Email</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">example@example.com</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Phone</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">(097) 234-5678</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Mobile</p>
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-muted mb-0">(098) 765-4321</p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-3">
-                  <p class="mb-0">Address</p>
-                </div>
 
-              </div>
+        <div class="col-12">
+            <div class="card shadow mb-3 mt-3">
+                <div class="card-header">
+                   <center><h5>Data Lengkap</h5></center>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <h6 class="font-weight-bold">Nama Lengkap</h6>
+                        </div>
+                        <div class="col-1">
+                            :
+                        </div>
+                        <div class="col-7">
+                            <h6>{{ $officer->name_officer }}</h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-4">
+                            <h6 class="font-weight-bold">Username</h6>
+                        </div>
+                        <div class="col-1">
+                            :
+                        </div>
+                        <div class="col-7">
+                            <h6>{{ $officer->username }}</h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-4">
+                            <h6 class="font-weight-bold">Password</h6>
+                        </div>
+                        <div class="col-1">
+                            :
+                        </div>
+                        <div class="col-7">
+                            <h6>*******</h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-4">
+                            <h6 class="font-weight-bold">Level</h6>
+                        </div>
+                        <div class="col-1">
+                            :
+                        </div>
+                        <div class="col-7">
+                            <h6>{{ $officer->level }}</h6>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+</div>
 @endsection

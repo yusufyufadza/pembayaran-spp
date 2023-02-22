@@ -31,8 +31,8 @@ Route::get('/login', function () {
 Route::post('/loginPost',[authController::class,'login']);
 
 //class
-Route::get('/class', [classController::class, 'index']);
-Route::get('/class/{id}', [classController::class, 'show']);
+Route::get('/class', [classController::class, 'show']);
+Route::get('/class/detail/{id}', [classController::class, 'detail']);
 
 //Students
 Route::get('/student',[studentController::class,'index']);

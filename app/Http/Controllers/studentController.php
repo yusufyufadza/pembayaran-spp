@@ -89,8 +89,9 @@ class studentController extends Controller
     {
         $student = student::where('nisn',$nisn)->first();
         $class = classModel::all();
+        // dd($student);
 
-        return view('contents.student.editStudent',compact('student','class'));
+        return view('contents.student.editStudent',compact(['student','class']));
     }
 
     /**
@@ -113,7 +114,7 @@ class studentController extends Controller
             ]);
 
 
- 
+
             if($request['nisn'] === $nisn){
                 student::where('nisn', $nisn)->update([
                     'nis'               =>  $validatedData['nis'],

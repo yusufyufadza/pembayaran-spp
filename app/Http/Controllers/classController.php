@@ -8,18 +8,18 @@ use Illuminate\Http\Request;
 
 class classController extends Controller
 {
-    public function index()
+    public function show()
     {
         $title = "Daftar Kelas";
         $classes = classModel::get();
         return view('contents.class.showClass', compact('title', 'classes'));
     }
 
-    public function show($id)
+    public function detail($id)
     {
         $title = "Detail Kelas";
         $classes = classModel::where('id', $id)->get();
-        $students = student::where('id', $id)->get();
+        $students = student::where('id_class', $id)->get();
         return view('contents.class.detailClass', compact('title', 'classes', 'students'));
     }
 }

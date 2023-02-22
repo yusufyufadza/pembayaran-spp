@@ -46,7 +46,7 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                       <table class="table table-bordered">
-                        <thead>                  
+                        <thead>
                           <tr>
                             <th style="width: 10px">No</th>
                             <th>NIS</th>
@@ -56,18 +56,18 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($students as $student) 
+                          @foreach ($students as $student)
                           <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $student->nis }}</td>
                             <td>{{ $student->name }}</td>
                             <td>{{ $student->email }}</td>
                             <td class="text-center">
-                              <a class="btn btn-primary" href="/class/{{  $student->id }}"><i class="fas fa-eye"></i></a>
-                              <a class="btn btn-warning" href="/class/{{  $student->id }}/edit"><i class="fas fa-pen"></i></a>
-                              <a class="btn btn-danger" href="/class/delete/{{  $student->id }}" data-toggle="modal" data-target="#modalDelete{{ $student->id}}"><i class="fas fa-trash"></i></a>
+                              <a class="btn btn-primary" href="/student/{{  $student->nisn }}"><i class="fas fa-eye"></i></a>
+                              <a class="btn btn-warning" href="/student/{{  $student->nisn }}/edit"><i class="fas fa-pen"></i></a>
+                              <a class="btn btn-danger" href="/student/delete/{{  $student->nisn }}" data-toggle="modal" data-target="#modalDelete{{ $student->nisn}}"><i class="fas fa-trash"></i></a>
 
-                              <div class="modal" tabindex="-1" role="dialog" id="modalDelete{{ $student->id}}">
+                              <div class="modal" tabindex="-1" role="dialog" id="modalDelete{{ $student->nisn}}">
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -80,7 +80,7 @@
                                       <p>Apakah anda yakin ingin menghapus siswa {{ $student->name}}</p>
                                     </div>
                                     <div class="modal-footer">
-                                      <form action="/class/{{ $student->id}}/delete" method="POST">
+                                      <form action="/student/{{ $student->nisn}}/delete" method="POST">
                                         @method('delete')
                                         @csrf
                                       <button type="submit" class="btn btn-primary">Yakin</button>
@@ -96,5 +96,5 @@
                         </tbody>
                       </table>
                     </div>
-                </section> 
+                </section>
 @endsection

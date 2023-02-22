@@ -4,8 +4,6 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-
-        
           <div class="col-12">
           @if (Session::has('success'))
           <div class="alert alert-success" role="alert"
@@ -16,7 +14,7 @@
         </div>
     </div>
     <div class="col-sm-6">
-     
+
     </div>
     </div><!-- /.container-fluid -->
   </section>
@@ -32,7 +30,6 @@
                             <li class="breadcrumb-item active">{{ $title }}</li>
                           </ol>
                       <h3 class="card-title">{{ $title }}</h3>
-                      <br>
                         <a class="btn btn-success mt-2" href="/class/create"><i class="fas fa-plus"></i> Tambah Data</a>
                     </div>
                     <!-- /.card-header -->
@@ -54,7 +51,7 @@
                                 <td>{{ $class->name_class }}</td>
                                 <td>{{ $class->student_class }}</td>
                                 <td class="mx-auto">
-          
+
                                   <div class="mx-auto">
                                   <a class="btn btn-primary" href="/class/detail/{{  $class->id }}"><i class="fas fa-eye"></i></a>
                                   <a class="btn btn-warning" href="/class/edit/{{  $class->id }}"><i class="fas fa-pen"></i></a>
