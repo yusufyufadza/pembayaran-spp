@@ -21,17 +21,31 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="card">
-                    <div class="card-header">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Siswa</a></li>
-                            <li class="breadcrumb-item active">{{ $title }}</li>
-                          </ol>
-                      <h3 class="card-title">{{ $title }}</h3>
-                        <a class="btn btn-success mt-2" href="/class/create"><i class="fas fa-plus"></i> Tambah Data</a>
-                    </div>
+                @if (session('success'))
+                <div class="alert alert-primary alert-dismissible fade show" role="alert"><strong>Selamat ! </strong>
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" data-bs-original-title="" title=""></button>
+                    {{ session('success') }}
+                  </div>
+                  @endif
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <div class="page-header">
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <ol class="breadcrumb">
+                                      <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                                      <li class="breadcrumb-item active">Kelas</li>
+                                    </ol>
+                                    <br>
+                                  <h3>Daftar kelas</h3>
+                                  <br>
+                                  <a class="btn btn-success mt-2" href="/class/create"><i class="fas fa-plus"></i> Tambah Data</a>
+                                </div>
+
+
+
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div class="dt-ext table-responsive">

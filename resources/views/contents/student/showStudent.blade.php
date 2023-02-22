@@ -14,11 +14,12 @@
             <div class="page-header">
                 <div class="row">
                   <div class="col-sm-6">
-                    <h3>User Siswa</h3>
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                      <li class="breadcrumb-item active">Siswa</li>
-                    </ol>
+                        <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Siswa</li>
+                      </ol>
+                      <br>
+                    <h3>Daftar Siswa</h3>
                   </div>
 
           <div class="card-body">
